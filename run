@@ -2,7 +2,9 @@
 
 <?php
 
-$birthDate = "1976-07-11";
+$opts = getopt("b:");
+
+$birthDate = $opts["b"]; // "1976-07-11";
 $todayDate = date("Y-m-d");
 
 $birthTime = strtotime($birthDate);
