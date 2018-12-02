@@ -2,16 +2,10 @@
 
 <?php
 
-$opts = getopt("b:");
+include "src/Dates/BirthDays.php";
 
-$birthDate = $opts["b"]; // "1976-07-11";
-$todayDate = date("Y-m-d");
-
-$birthTime = strtotime($birthDate);
-$todayTime = strtotime($todayDate);
-
-$totalsecs = $todayTime - $birthTime;
-$totalDays = floor($totalsecs / 3600 /24);
-
+$birthDate = "1976-07-11";
+$days = new \Levchenko\Dates\BirthDays($birthDate) ;//\Levchenko\slaventiy76\
+$totalDays = $days->findTotalDays();
 echo"$birthDate : $totalDays\n";
 
